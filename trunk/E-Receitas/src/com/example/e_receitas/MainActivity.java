@@ -1,17 +1,58 @@
 package com.example.e_receitas;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
+@SuppressLint("ShowToast")
 public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        // Chamando os objetos
+        final EditText login = (EditText) findViewById(R.id.login);
+        final EditText senha = (EditText) findViewById(R.id.senha);
+        Button entrar = (Button) findViewById(R.id.entrar);
+        Button limpar = (Button) findViewById(R.id.limpar);
+        
+        entrar.setOnClickListener(new View.OnClickListener() {
+			
+			@SuppressLint("ShowToast")
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				String logincerto = "demo";
+				String senhacerta = "demo";
+				String strlogin = login.getText().toString();
+				String strSenha = senha.getText().toString();
+				
+				if (strlogin.equals(logincerto) && strSenha.equals(senhacerta) ){
+					Toast.makeText(MainActivity.this, "Login com sucesso!", Toast.LENGTH_SHORT);
+				}else {
+					Toast.makeText(MainActivity.this, "Erro! Login ou senha estão incorretos!", Toast.LENGTH_SHORT);
+				}
+			}
+		});
+        
+        limpar.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				login.setText("");
+				senha.setText("");
+			}
+		});
     }
 
 
