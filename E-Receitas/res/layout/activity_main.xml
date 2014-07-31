@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.e_receitas.MainActivity" >
+    tools:context=".MainActivity" >
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -30,14 +30,16 @@
         </LinearLayout>
     </LinearLayout>
 
-    <EditText
+    <EditText 
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/linearLayout1"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="26dp"
-        android:ems="10" />
+        android:ems="10"> 
+        <requestFocus />
+    </EditText>
 
     <TextView
         android:id="@+id/textView1"

@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".EditarTipoContaActivity" >
+
+   	<TextView
+       android:id="@+id/textView3"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:text="Editar Tipo de Receita"
+       android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="52dp"
+        android:text="Nome"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+   
+    <EditText
+        android:id="@+id/nomeEditar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/nomeEditar"
+        android:text="Descrição"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+   
+    <EditText
+        android:id="@+id/descricaoEditar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:ems="10" >
+    </EditText>
+
+
+    <Button
+        android:id="@+id/salvarTipoReceitaEditar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descricaoEditar"
+        android:layout_marginTop="42dp"
+        android:text="Salvar"
+        android:width="150dp" />
+
+    <Button
+        android:id="@+id/excluirTipoReceita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/salvarTipoReceitaEditar"
+        android:layout_toRightOf="@+id/salvarTipoReceitaEditar"
+        android:text="Excluir"
+        android:width="150dp" />
+
+</RelativeLayout>
