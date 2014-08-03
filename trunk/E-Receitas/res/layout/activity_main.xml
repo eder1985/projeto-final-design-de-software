@@ -6,88 +6,102 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context=".MainActivity" >
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:orientation="vertical" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Senha"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <EditText 
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/linearLayout1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="26dp"
-        android:ems="10"> 
-        <requestFocus />
-    </EditText>
-
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/labelemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/login"
-        android:layout_centerHorizontal="true"
-        android:text="Login:"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
+        android:text="E-mail:" />
+    
+    <EditText
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/labelemail"
+        android:layout_toRightOf="@+id/labelemail" />
+    
+    <ImageButton
+        android:id="@+id/ic_help_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="250dp"
+        android:background="@drawable/ic_help" />
+    
+    <TextView
+        android:id="@+id/labelsenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/labelemail"
+        android:layout_below="@+id/login"
+        android:layout_marginTop="10dp"
+        android:text="Senha:" />
+    
+    
     <EditText
         android:id="@+id/senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:layout_toRightOf="@+id/labelsenha" 
+        android:layout_alignTop="@+id/labelsenha"
+        android:inputType="textPassword"/>
+        
+    <ImageButton
+        android:id="@+id/ic_help_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout1"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:inputType="textPassword" >
-
-        <requestFocus />
-    </EditText>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/login"
-        android:layout_alignRight="@+id/senha"
-        android:layout_below="@+id/senha"
-        android:layout_marginTop="14dp" >
-
-        <Button
-            android:id="@+id/entrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.37"
-            android:text="Entrar" />
-
-    </LinearLayout>
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="250dp"
+        android:background="@drawable/ic_help" />
 
     <Button
-        android:id="@+id/limpar"
+        android:id="@+id/entrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/linearLayout2"
-        android:layout_alignRight="@+id/login"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_weight="0.37"
-        android:text="Limpar" />
-
+        android:layout_below="@+id/senha"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:text="Login" />
+    
+    <ImageButton
+        android:id="@+id/ic_facebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/entrar"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="33dp"
+        android:background="@drawable/ic_facebook" />
+    
+    <ImageButton
+        android:id="@+id/ic_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/entrar"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="33dp"
+        android:layout_toRightOf="@+id/ic_facebook" 
+        android:background="@drawable/ic_google" />
+    
+    <ImageButton
+        android:id="@+id/ic_twitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/entrar"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/ic_google"
+        android:background="@drawable/ic_twitter" />
+        
+    
+    <Button
+        android:id="@+id/cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="270dp"
+        android:layout_centerHorizontal="true"
+        android:text="Cadastre-se" />
+    
 </RelativeLayout>

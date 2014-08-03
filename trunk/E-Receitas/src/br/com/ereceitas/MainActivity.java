@@ -26,7 +26,6 @@ public class MainActivity extends Activity {
         final EditText login = (EditText) findViewById(R.id.login);
         final EditText senha = (EditText) findViewById(R.id.senha);
         Button entrar = (Button) findViewById(R.id.entrar);
-        Button limpar = (Button) findViewById(R.id.limpar);
         
         entrar.setOnClickListener(new View.OnClickListener() {
 			
@@ -34,7 +33,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				String logincerto = "demo";
+				String logincerto = "demo@demo.com";
 				String senhacerta = "demo";
 				String strlogin = login.getText().toString();
 				String strSenha = senha.getText().toString();
@@ -45,21 +44,11 @@ public class MainActivity extends Activity {
 							MenuActivity.class);
 					startActivity(menuIntent);
 				}else {
-					Toast.makeText(MainActivity.this, "Erro! Login ou senha estão incorretos!", Toast.LENGTH_SHORT);
+					Toast.makeText(MainActivity.this, "Erro! Login ou senha estï¿½o incorretos!", Toast.LENGTH_SHORT);
 				}
 			}
-		});
+		});       
         
-        limpar.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				System.out.println("teste");
-				login.setText("");
-				senha.setText("");
-			}
-		});
     }
 
 
