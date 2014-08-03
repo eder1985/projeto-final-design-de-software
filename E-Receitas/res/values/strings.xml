@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">E-Receitas</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="title_activity_tipo_receita">TipoReceitaActivity</string>
