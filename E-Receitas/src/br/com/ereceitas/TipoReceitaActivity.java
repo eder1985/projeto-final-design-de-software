@@ -1,11 +1,13 @@
 package br.com.ereceitas;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,73 +16,110 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
-import br.com.ereceitas.R;
+import android.widget.SimpleAdapter;
+import android.widget.Toast;
 import br.com.ereceitas.dao.TipoReceitaDao;
 import br.com.ereceitas.model.TipoReceita;
 
+import com.example.e_receitas.R;
 
 public class TipoReceitaActivity extends Activity {
 
-	Button cadastrarTipoReceita;
-	ListView listarTipoReceita;
-	 ArrayAdapter<String> listAdapter;
-	ArrayList<String> tipoReceitasString = new ArrayList<String>();
+	EditText nome;
+	EditText descricao;
+	Button cadastrar;
+	Button editar;
+	private ListView listView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tipo_receita);
 		
-		cadastrarTipoReceita = (Button) findViewById(R.id.cadastrarTipoReceita);
-		cadastrarTipoReceita.setOnClickListener(new OnClickListener() {
-			
+		listView = (ListView) findViewById(R.id.listagemTipoReceita);
+		exibirLista();
+		
+		nome = (EditText) findViewById(R.id.nome);
+		descricao = (EditText) findViewById(R.id.descriao);
+		
+		cadastrar = (Button) findViewById(R.id.cadastrarTipoReceita);
+		cadastrar.setOnClickListener(new OnClickListener() {
+	
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			Intent cadastrarTipoReceita = new Intent(TipoReceitaActivity.this, CadastrarTipoReceitaActivity.class);
-			startActivity(cadastrarTipoReceita);
-		}
+			String nomeTipoReceita = nome.getText().toString();
+			String descricaoTipoReceita = descricao.getText().toString();
+			
+			if(nomeTipoReceita.trim().equals("") || nomeTipoReceita == null){
+				Toast.makeText(TipoReceitaActivity.this, "O campo nome precisa ser preenchido", 
+						Toast.LENGTH_LONG).show();
+			}else if (descricaoTipoReceita.trim().equals("") || descricaoTipoReceita == null){
+				Toast.makeText(TipoReceitaActivity.this, "O campo descrição precisa ser preenchido", 
+						Toast.LENGTH_LONG).show();
+			}else{
+				TipoReceita tipoReceita = new TipoReceita();
+				tipoReceita.setNome(nomeTipoReceita);
+				tipoReceita.setDescricao(descricaoTipoReceita);
+				
+				TipoReceitaDao dao = TipoReceitaDao.getInstance(getApplicationContext());
+				
+				try {
+					dao.salvar(tipoReceita);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				Toast.makeText(TipoReceitaActivity.this, "Tipo de Receita Cadastrado", Toast.LENGTH_LONG).show();
+				//listarTipoReceitas();
+				exibirLista();
+			}
+		  }
 		});
 		
-		//Listar todos os tipos de receitas
-		listarTipoReceitas();
-		
-		 
-	    listarTipoReceita.setOnItemClickListener(new OnItemClickListener() {
+		listView.setOnItemClickListener(new OnItemClickListener() {
 
-           @Override
-           public void onItemClick(AdapterView<?> arg0, View arg1,
-                   int position, long arg3) {
-           	//enviar posicao do tipo de conta que foi selecionado para a activity editarExcluir
-              Intent editarTipoReceitaIntent = new Intent(TipoReceitaActivity.this,EditarTipoReceitaActivity.class);
-              editarTipoReceitaIntent.putExtra("posicao", position);
-              startActivity(editarTipoReceitaIntent);
-           }
-       });
+	           @Override
+	           public void onItemClick(AdapterView<?> arg0, View arg1,
+	                   int position, long arg3) {
+	           	//enviar posicao do tipo de conta que foi selecionado para a activity editarExcluir
+	              Intent editarTipoReceitaIntent = new Intent(TipoReceitaActivity.this,EditarTipoReceitaActivity.class);
+	              editarTipoReceitaIntent.putExtra("posicao", position);
+	              startActivity(editarTipoReceitaIntent);
+	           }
+	       });
 	}
 
-	private void listarTipoReceitas() {
-		TipoReceitaDao tipoReceitaDao = TipoReceitaDao.getInstance(getApplicationContext());
-		List<TipoReceita> tipoReceitas = new ArrayList<TipoReceita>();
-		tipoReceitasString.clear();
-		
+	
+	public void exibirLista() {
 		try {
-			tipoReceitas = tipoReceitaDao.recuperarTodos();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		
-		if(!tipoReceitas.isEmpty()){
-			for (TipoReceita tipoReceita : tipoReceitas) {
-				tipoReceitasString.add(tipoReceita.getNome());
+			String[] from = new String[] { "codigo", "nome" };
+			int[] to = new int[] { R.id.listCod, R.id.listNome, };
+
+			TipoReceitaDao tipoReceitaDao = TipoReceitaDao.getInstance(getApplicationContext());
+			List<TipoReceita> listaTipos = new ArrayList<TipoReceita>();
+			listaTipos = tipoReceitaDao.recuperarTodos();
+			Log.i("LISTA 2", listaTipos.size() + "");
+
+			List<HashMap<String, String>> mapItensLista = new ArrayList<HashMap<String, String>>();
+			for (int i = 0; i < listaTipos.size(); i++) {
+				HashMap<String, String> mapItens = new HashMap<String, String>();
+				
+				mapItens.put("codigo","" + listaTipos.get(i).getId());
+				mapItens.put("nome", listaTipos.get(i).getNome() );
+
+				mapItensLista.add(mapItens);
 			}
+			
+			SimpleAdapter adapter = new SimpleAdapter(this, mapItensLista,
+					R.layout.item_listview, from, to);
+			listView.setAdapter(adapter);
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		
-		listarTipoReceita = (ListView) findViewById(R.id.listaTipoReceita);
-		listAdapter = new ArrayAdapter<String>(TipoReceitaActivity.this,
-                android.R.layout.simple_list_item_1, tipoReceitasString);
-		listarTipoReceita.setAdapter(listAdapter);
 	}
 
 	@Override
