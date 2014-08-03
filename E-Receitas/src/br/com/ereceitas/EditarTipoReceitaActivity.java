@@ -9,10 +9,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+import br.com.ereceitas.R;
 import br.com.ereceitas.dao.TipoReceitaDao;
 import br.com.ereceitas.model.TipoReceita;
 
-import com.example.e_receitas.R;
 
 public class EditarTipoReceitaActivity extends Activity {
 	
@@ -64,7 +64,7 @@ public class EditarTipoReceitaActivity extends Activity {
 				}catch (Exception e) {
 					// TODO: handle exception
 				}
-				Toast.makeText(EditarTipoReceitaActivity.this, "Tipo de Receita excluída!", Toast.LENGTH_SHORT).show();
+				Toast.makeText(EditarTipoReceitaActivity.this, "Tipo de Receita excluï¿½da!", Toast.LENGTH_SHORT).show();
 				finish();
 			}
 		});

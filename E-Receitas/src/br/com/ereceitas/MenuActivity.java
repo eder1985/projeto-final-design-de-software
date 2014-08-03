@@ -1,6 +1,6 @@
 package br.com.ereceitas;
 
-import com.example.e_receitas.R;
+import br.com.ereceitas.R;
 
 import android.app.Activity;
 import android.content.Intent;
