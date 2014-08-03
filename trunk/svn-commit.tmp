@@ -1,0 +1,12 @@
+
+--Esta linha, e as abaixo, serão ignoradas--
+
+M    E-Receitas/.classpath
+M    E-Receitas/AndroidManifest.xml
+M    E-Receitas/bin/AndroidManifest.xml
+M    E-Receitas/bin/E-Receitas.apk
+M    E-Receitas/bin/classes.dex
+M    E-Receitas/bin/resources.ap_
+M    E-Receitas/project.properties
+M    E-Receitas/res/layout/activity_main.xml
+M    E-Receitas/src/com/example/e_receitas/MainActivity.java
