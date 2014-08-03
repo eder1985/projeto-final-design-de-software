@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -23,7 +22,6 @@ import android.widget.Toast;
 import br.com.ereceitas.dao.TipoReceitaDao;
 import br.com.ereceitas.model.TipoReceita;
 
-import com.example.e_receitas.R;
 
 public class TipoReceitaActivity extends Activity {
 
