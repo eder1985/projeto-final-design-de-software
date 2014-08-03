@@ -1,6 +1,6 @@
 package br.com.ereceitas;
 
-import com.example.e_receitas.R;
+import br.com.ereceitas.R;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
 							MenuActivity.class);
 					startActivity(menuIntent);
 				}else {
-					Toast.makeText(MainActivity.this, "Erro! Login ou senha est�o incorretos!", Toast.LENGTH_SHORT);
+					Toast.makeText(MainActivity.this, "Erro! Login ou senha estão incorretos!", Toast.LENGTH_LONG).show();
 				}
 			}
 		});       

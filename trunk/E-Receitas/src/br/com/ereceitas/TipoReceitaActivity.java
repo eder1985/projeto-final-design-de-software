@@ -15,10 +15,10 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import br.com.ereceitas.R;
 import br.com.ereceitas.dao.TipoReceitaDao;
 import br.com.ereceitas.model.TipoReceita;
 
-import com.example.e_receitas.R;
 
 public class TipoReceitaActivity extends Activity {
 

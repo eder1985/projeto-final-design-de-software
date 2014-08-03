@@ -9,10 +9,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import br.com.ereceitas.R;
 import br.com.ereceitas.dao.TipoReceitaDao;
 import br.com.ereceitas.model.TipoReceita;
 
-import com.example.e_receitas.R;
 
 public class CadastrarTipoReceitaActivity extends Activity {
 
@@ -41,7 +41,7 @@ public class CadastrarTipoReceitaActivity extends Activity {
 					Toast.makeText(CadastrarTipoReceitaActivity.this, "O campo nome precisa ser preenchido", 
 							Toast.LENGTH_LONG).show();
 				}else if (descricaoTipoReceita.trim().equals("") || descricaoTipoReceita == null){
-					Toast.makeText(CadastrarTipoReceitaActivity.this, "O campo descrição precisa ser preenchido", 
+					Toast.makeText(CadastrarTipoReceitaActivity.this, "O campo descriï¿½ï¿½o precisa ser preenchido", 
 							Toast.LENGTH_LONG).show();
 				}else{
 					TipoReceita tipoReceita = new TipoReceita();
