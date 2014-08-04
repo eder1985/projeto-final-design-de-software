@@ -55,7 +55,7 @@ public class TipoReceitaActivity extends Activity {
 				Toast.makeText(TipoReceitaActivity.this, "O campo nome precisa ser preenchido", 
 						Toast.LENGTH_LONG).show();
 			}else if (descricaoTipoReceita.trim().equals("") || descricaoTipoReceita == null){
-				Toast.makeText(TipoReceitaActivity.this, "O campo descrição precisa ser preenchido", 
+				Toast.makeText(TipoReceitaActivity.this, "O campo descriÃ§Ã£o precisa ser preenchido", 
 						Toast.LENGTH_LONG).show();
 			}else{
 				TipoReceita tipoReceita = new TipoReceita();
@@ -66,6 +66,8 @@ public class TipoReceitaActivity extends Activity {
 				
 				try {
 					dao.salvar(tipoReceita);
+					nome.setText("");
+					descricao.setText("");
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
