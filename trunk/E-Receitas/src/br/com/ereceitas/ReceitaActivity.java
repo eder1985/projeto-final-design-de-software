@@ -112,7 +112,7 @@ public class ReceitaActivity extends Activity {
 		if (!tipoReceitas.isEmpty()) {
 			int index = 0;
 			for (TipoReceita tipoReceita : tipoReceitas) {
-				tipoReceitaArray[index] = tipoReceita.getDescricao();
+				tipoReceitaArray[index] = tipoReceita.getNome();
 				index++;
 			}
 		}
