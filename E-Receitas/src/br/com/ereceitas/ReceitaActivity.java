@@ -70,14 +70,14 @@ public class ReceitaActivity extends Activity {
 						break;
 					}
 					
-					Intent intent = new Intent(ReceitaActivity.this, IngredientesActivity.class);
+					/*Intent intent = new Intent(ReceitaActivity.this, IngredientesActivity.class);
 
 					Bundle bundle = new Bundle();
 					bundle.putSerializable("receita",receita);
 
 					intent.putExtras(bundle);
 
-					startActivity(intent);
+					startActivity(intent);*/
 			}
 		  }
 		});
