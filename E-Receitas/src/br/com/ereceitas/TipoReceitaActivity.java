@@ -1,5 +1,7 @@
 package br.com.ereceitas;
 
+
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -55,7 +57,7 @@ public class TipoReceitaActivity extends Activity {
 				Toast.makeText(TipoReceitaActivity.this, "O campo nome precisa ser preenchido", 
 						Toast.LENGTH_LONG).show();
 			}else if (descricaoTipoReceita.trim().equals("") || descricaoTipoReceita == null){
-				Toast.makeText(TipoReceitaActivity.this, "O campo descriÃ§Ã£o precisa ser preenchido", 
+				Toast.makeText(TipoReceitaActivity.this, "O campo descrição precisa ser preenchido", 
 						Toast.LENGTH_LONG).show();
 			}else{
 				TipoReceita tipoReceita = new TipoReceita();
@@ -72,7 +74,7 @@ public class TipoReceitaActivity extends Activity {
 					// TODO: handle exception
 				}
 				
-				Toast.makeText(TipoReceitaActivity.this, "Tipo de Receita Cadastrado", Toast.LENGTH_LONG).show();
+				Toast.makeText(TipoReceitaActivity.this, "Tipo de Receita Cadastrada!", Toast.LENGTH_LONG).show();
 				//listarTipoReceitas();
 				exibirLista();
 			}
