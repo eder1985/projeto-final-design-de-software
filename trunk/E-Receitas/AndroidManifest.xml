@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="br.com.ereceitas.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,19 +23,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="br.com.ereceitas.MenuActivity"
+            android:name=".MenuActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="br.com.ereceitas.TipoReceitaActivity"
+            android:name=".TipoReceitaActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="br.com.ereceitas.CadastrarTipoReceitaActivity"
+            android:name=".CadastrarTipoReceitaActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="br.com.ereceitas.EditarTipoReceitaActivity"
+            android:name=".EditarTipoReceitaActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".ReceitaActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".IngredientesActivity"
             android:label="@string/app_name" >
         </activity>
     </application>
