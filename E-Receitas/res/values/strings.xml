@@ -7,5 +7,8 @@
     <string name="title_activity_tipo_receita">TipoReceitaActivity</string>
     <string name="title_activity_cadastrar_tipo_receita">CadastrarTipoReceitaActivity</string>
     <string name="title_activity_editar_tipo_conta">EditarTipoContaActivity</string>
+    <string name="title_activity_receita">ReceitaActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_ingredientes">IngredientesActivity</string>
 
 </resources>

@@ -18,14 +18,14 @@
             android:id="@+id/imageButton6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_livros2"
+            android:src="@drawable/ic_receitas"
             android:layout_weight="1" />
 
         <ImageButton
             android:id="@+id/imageButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_autores2" 
+            android:src="@drawable/ic_usuarios" 
             android:layout_weight="1" />
 
     </TableRow>
@@ -60,14 +60,14 @@
             android:id="@+id/imageButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_editora2"
+            android:src="@drawable/ic_compartilhadas"
             android:layout_weight="1" />
 
         <ImageButton
             android:id="@+id/imageButton7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_prateleira2"
+            android:src="@drawable/ic_consultas"
             android:layout_weight="1" />
 
     </TableRow>

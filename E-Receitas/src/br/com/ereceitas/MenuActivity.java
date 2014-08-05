@@ -1,7 +1,5 @@
 package br.com.ereceitas;
 
-import br.com.ereceitas.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,22 +10,32 @@ import android.widget.ImageButton;
 
 public class MenuActivity extends Activity {
 	
-	ImageButton cadastrarTipoReceita;
+	ImageButton receita;
+	ImageButton tipoReceita;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
 			
-		cadastrarTipoReceita = (ImageButton) findViewById(R.id.imageButton2);
-		cadastrarTipoReceita.setOnClickListener(new OnClickListener() {
-			
+		tipoReceita = (ImageButton) findViewById(R.id.imageButton2);
+		tipoReceita.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent cadastrarTipoReceitaIntent = new Intent(MenuActivity.this,TipoReceitaActivity.class);
 				startActivity(cadastrarTipoReceitaIntent);
 				
+			}
+		});
+		
+		receita = (ImageButton) findViewById(R.id.imageButton6);
+		receita.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent receita = new Intent(MenuActivity.this, ReceitaActivity.class);
+				startActivity(receita);
 			}
 		});
 	}
